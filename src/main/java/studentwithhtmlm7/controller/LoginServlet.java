@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,13 +34,15 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 //		value=true email exist then i need to check with the password
         if(password.equals(dbPassword)) {
 //        	password matches
-        	printWriter.print("Login Success");
+        	resp.sendRedirect("https://www.javatpoint.com/java-tutorial");
         }else {
-        	printWriter.print("Invalid password");
+        	RequestDispatcher dispatcher=req.getRequestDispatcher("login.html");
+        	dispatcher.forward(req, resp);
         }
 	}else {
 //		value=false
-		printWriter.print("Sorry Invalid email");
+		RequestDispatcher dispatcher=req.getRequestDispatcher("login.html");
+    	dispatcher.forward(req, resp);
 	}
 	
 	

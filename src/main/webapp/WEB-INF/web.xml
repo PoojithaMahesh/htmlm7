@@ -37,6 +37,16 @@
 <url-pattern>/select</url-pattern>
 </servlet-mapping>
 
+
+<servlet>
+<servlet-name>up</servlet-name>
+<servlet-class>studentwithhtmlm7.controller.UpdateServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>up</servlet-name>
+<url-pattern>/update</url-pattern>
+</servlet-mapping>
+
 <servlet>
 <servlet-name>del</servlet-name>
 <servlet-class>studentwithhtmlm7.controller.DeleteServlet</servlet-class>
